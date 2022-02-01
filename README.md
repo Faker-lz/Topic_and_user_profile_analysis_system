@@ -20,13 +20,13 @@
   
   - 话题简略传播关系图：用有向图展示出该话题的传播关系。
   
-  ![avatar](E:\study\lab\大二年度项目\github\doc\illustration\话题任务列表.png)
+  ![avatar](https://github.com/Faker-lz/Topic_and_user_profile_analysis_system/blob/master/doc/illustration/%E8%AF%9D%E9%A2%98%E4%BB%BB%E5%8A%A1%E5%88%97%E8%A1%A8.png)
 
 - 博文分析：对话题中热度前十的博文进行详细分析。
   
   - 博文详情：展示博文的文本内容和发博用户的粗略信息。
   
-  - 博文热度趋势：展示博文近期的关注热度趋势。
+  - 
   
   - 博文关键转发节点：列出在博文传播过程中起重要扩散作用的转发节点，通常是转发后产生相对大量关注的节点。
   
@@ -38,11 +38,11 @@
   
   - 博文热点转发：显示关注较高的热点转发内容。
   
-  ![avatar](.\doc\illustration\博文详情.png)
+  ![avatar](https://github.com/Faker-lz/Topic_and_user_profile_analysis_system/blob/master/doc/illustration/%E5%8D%9A%E6%96%87%E8%AF%A6%E6%83%85.png)
 
 - 用户画像：根据用户在**不同话题**下微博文本的聚类主题为用户打标签，逐步完善用户画像。
   
-  ![artvar](E:\study\lab\大二年度项目\github\doc\illustration\话题内用户标签及具体传播关系.png)
+  ![artvar](https://github.com/Faker-lz/Topic_and_user_profile_analysis_system/blob/master/doc/illustration/%E8%AF%9D%E9%A2%98%E5%86%85%E7%94%A8%E6%88%B7%E6%A0%87%E7%AD%BE%E5%8F%8A%E5%85%B7%E4%BD%93%E4%BC%A0%E6%92%AD%E5%85%B3%E7%B3%BB.png)
 
 ## 设计
 
@@ -78,17 +78,13 @@
     
     
     class WeiBoConfig(BaseSettings):
-        """weibo 爬虫api的相关配置"""
-        BASEPATH: str = 'http://127.0.0.1:8000'
-    
-    
-    
+    """weibo 爬虫api的相关配置"""
+        BASEPATH: str = 'http://127.0.0.1:8000'
     ```
   
   * 在`\code\back_end\celery_task\config\task_config_class.py`文件中修改`celery`相关配置：
     
     ```
-    
     from pydantic import BaseSettings
     
     class CeleryConfig(BaseSettings):
@@ -100,53 +96,50 @@
     
     
     class MongoConfig(BaseSettings):
-        """
-        Mongo的相关配置
-        """
-        HOST: str = '127.0.0.1'
-        PORT: int = 27017
-        DB_NAME: str = 'test'
+      """
+      Mongo的相关配置
+      """
+      HOST: str = '127.0.0.1'
+      PORT: int = 27017
+      DB_NAME: str = 'test'
     
-        # 话题任务数据库名称
-        TASK: str = 'tag_task'
-        BLOG: str = 'blog'
-        CHARACTER: str = 'character_category'
-        EVOLVE: str = 'tag_evolve'
-        HOT: str = 'tag_hot'
-        INTRODUCE: str = 'tag_introduce'
-        RELATION: str = 'tag_relation_graph'
-        RETWEET: str = 'tag_weibo_task'
-        CLOUD: str = 'tag_word_cloud'
-        USER: str = 'tag_user'
+      # 话题任务数据库名称
+      TASK: str = 'tag_task'
+      BLOG: str = 'blog'
+      CHARACTER: str = 'character_category'
+      EVOLVE: str = 'tag_evolve'
+      HOT: str = 'tag_hot'
+      INTRODUCE: str = 'tag_introduce'
+      RELATION: str = 'tag_relation_graph'
+      RETWEET: str = 'tag_weibo_task'
+      CLOUD: str = 'tag_word_cloud'
+      USER: str = 'tag_user'
     
-        # 评论任务数据库名称
-        COMMENT_TASK = 'comment_task'
-        COMMENT_REPOSTS = 'comment_reposts'
-        COMMENT_CLOUD = 'comment_cloud'
-        COMMENT_CLUSTER = 'comment_cluster'
-        COMMENT_NODE = 'comment_node'
-        COMMENT_TENDENCY = 'comment_tendency'
-        COMMENT_TOPIC = 'comment_topic'
-        COMMENT_TREE = 'comment_tree'
+      # 评论任务数据库名称
+      COMMENT_TASK = 'comment_task'
+      COMMENT_REPOSTS = 'comment_reposts'
+      COMMENT_CLOUD = 'comment_cloud'
+      COMMENT_CLUSTER = 'comment_cluster'
+      COMMENT_NODE = 'comment_node'
+      COMMENT_TENDENCY = 'comment_tendency'
+      COMMENT_TOPIC = 'comment_topic'
+      COMMENT_TREE = 'comment_tree'
     
     
     class ElasticSearchConfig(BaseSettings):
-        """
-        ES配置
-        """
-        ES_HOST = '127.0.0.1:9200'
-        ES_SEARCH_INDEX = 'weibo'
-        ES_TIMEOUT = 60
-        LANG_TYPE = ['zh', 'en']
-    
+      """
+      ES配置
+      """
+      ES_HOST = '127.0.0.1:9200'
+      ES_SEARCH_INDEX = 'weibo'
+      ES_TIMEOUT = 60
+      LANG_TYPE = ['zh', 'en']
     
     ```
+  
+  
+
     
-    
-
-
-
-
 
 * 微博爬虫微服务配置:
   
@@ -179,5 +172,3 @@
 * 微博爬虫
   
   进入`\code\weibo_crawler`文件夹，配置好后，运行`weibo_curl_api.py`文件
-  
-  

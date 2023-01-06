@@ -1,0 +1,37 @@
+import ChartView from '../../view/Chart';
+import GlobalModel from '../../model/Global';
+import ExtensionAPI from '../../core/ExtensionAPI';
+import { StageHandlerProgressParams, Payload } from '../../util/types';
+import BarSeriesModel from './BarSeries';
+declare class BarView extends ChartView {
+    static type: "bar";
+    type: "bar";
+    private _data;
+    private _isLargeDraw;
+    private _isFirstFrame;
+    private _onRendered;
+    private _backgroundGroup;
+    private _backgroundEls;
+    private _model;
+    constructor();
+    render(seriesModel: BarSeriesModel, ecModel: GlobalModel, api: ExtensionAPI, payload: Payload): void;
+    incrementalPrepareRender(seriesModel: BarSeriesModel): void;
+    incrementalRender(params: StageHandlerProgressParams, seriesModel: BarSeriesModel): void;
+    private _updateDrawMode;
+    private _renderNormal;
+    private _renderLarge;
+    private _incrementalRenderLarge;
+    private _updateLargeClip;
+    private _enableRealtimeSort;
+    private _dataSort;
+    private _isOrderChangedWithinSameData;
+    private _isOrderDifferentInView;
+    private _updateSortWithinSameData;
+    private _dispatchInitSort;
+    remove(ecModel: GlobalModel, api: ExtensionAPI): void;
+    dispose(ecModel: GlobalModel, api: ExtensionAPI): void;
+    private _removeOnRenderedListener;
+    private _clear;
+    private _removeBackground;
+}
+export default BarView;

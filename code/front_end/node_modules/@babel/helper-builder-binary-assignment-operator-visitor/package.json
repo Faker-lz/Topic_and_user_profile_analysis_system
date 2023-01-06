@@ -1,0 +1,60 @@
+{
+  "_args": [
+    [
+      "@babel/helper-builder-binary-assignment-operator-visitor@7.15.4",
+      "E:\\study\\lab\\大二年度项目\\front_end"
+    ]
+  ],
+  "_development": true,
+  "_from": "@babel/helper-builder-binary-assignment-operator-visitor@7.15.4",
+  "_id": "@babel/helper-builder-binary-assignment-operator-visitor@7.15.4",
+  "_inBundle": false,
+  "_integrity": "sha1-Ia2BX2CbhO4OMFhnbDPPbRZwUl8=",
+  "_location": "/@babel/helper-builder-binary-assignment-operator-visitor",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "@babel/helper-builder-binary-assignment-operator-visitor@7.15.4",
+    "name": "@babel/helper-builder-binary-assignment-operator-visitor",
+    "escapedName": "@babel%2fhelper-builder-binary-assignment-operator-visitor",
+    "scope": "@babel",
+    "rawSpec": "7.15.4",
+    "saveSpec": null,
+    "fetchSpec": "7.15.4"
+  },
+  "_requiredBy": [
+    "/@babel/plugin-transform-exponentiation-operator"
+  ],
+  "_resolved": "https://registry.nlark.com/@babel/helper-builder-binary-assignment-operator-visitor/download/@babel/helper-builder-binary-assignment-operator-visitor-7.15.4.tgz",
+  "_spec": "7.15.4",
+  "_where": "E:\\study\\lab\\大二年度项目\\front_end",
+  "author": {
+    "name": "The Babel Team",
+    "url": "https://babel.dev/team"
+  },
+  "bugs": {
+    "url": "https://github.com/babel/babel/issues"
+  },
+  "dependencies": {
+    "@babel/helper-explode-assignable-expression": "^7.15.4",
+    "@babel/types": "^7.15.4"
+  },
+  "description": "Helper function to build binary assignment operator visitors",
+  "engines": {
+    "node": ">=6.9.0"
+  },
+  "homepage": "https://babel.dev/docs/en/next/babel-helper-builder-binary-assignment-operator-visitor",
+  "license": "MIT",
+  "main": "./lib/index.js",
+  "name": "@babel/helper-builder-binary-assignment-operator-visitor",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/babel/babel.git",
+    "directory": "packages/babel-helper-builder-binary-assignment-operator-visitor"
+  },
+  "version": "7.15.4"
+}

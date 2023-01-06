@@ -1,0 +1,81 @@
+{
+  "_args": [
+    [
+      "@babel/helper-create-class-features-plugin@7.15.4",
+      "E:\\study\\lab\\大二年度项目\\front_end"
+    ]
+  ],
+  "_development": true,
+  "_from": "@babel/helper-create-class-features-plugin@7.15.4",
+  "_id": "@babel/helper-create-class-features-plugin@7.15.4",
+  "_inBundle": false,
+  "_integrity": "sha1-f5d8F70SpfujY8sZvqCQOUvzfS4=",
+  "_location": "/@babel/helper-create-class-features-plugin",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "@babel/helper-create-class-features-plugin@7.15.4",
+    "name": "@babel/helper-create-class-features-plugin",
+    "escapedName": "@babel%2fhelper-create-class-features-plugin",
+    "scope": "@babel",
+    "rawSpec": "7.15.4",
+    "saveSpec": null,
+    "fetchSpec": "7.15.4"
+  },
+  "_requiredBy": [
+    "/@babel/plugin-proposal-class-properties",
+    "/@babel/plugin-proposal-class-static-block",
+    "/@babel/plugin-proposal-decorators",
+    "/@babel/plugin-proposal-private-methods",
+    "/@babel/plugin-proposal-private-property-in-object"
+  ],
+  "_resolved": "https://registry.nlark.com/@babel/helper-create-class-features-plugin/download/@babel/helper-create-class-features-plugin-7.15.4.tgz",
+  "_spec": "7.15.4",
+  "_where": "E:\\study\\lab\\大二年度项目\\front_end",
+  "author": {
+    "name": "The Babel Team",
+    "url": "https://babel.dev/team"
+  },
+  "bugs": {
+    "url": "https://github.com/babel/babel/issues"
+  },
+  "dependencies": {
+    "@babel/helper-annotate-as-pure": "^7.15.4",
+    "@babel/helper-function-name": "^7.15.4",
+    "@babel/helper-member-expression-to-functions": "^7.15.4",
+    "@babel/helper-optimise-call-expression": "^7.15.4",
+    "@babel/helper-replace-supers": "^7.15.4",
+    "@babel/helper-split-export-declaration": "^7.15.4"
+  },
+  "description": "Compile class public and private fields, private methods and decorators to ES6",
+  "devDependencies": {
+    "@babel/core": "7.15.4",
+    "@babel/helper-plugin-test-runner": "7.14.5",
+    "@babel/plugin-syntax-class-static-block": "^7.14.5",
+    "@babel/preset-env": "7.15.4"
+  },
+  "engines": {
+    "node": ">=6.9.0"
+  },
+  "homepage": "https://github.com/babel/babel#readme",
+  "keywords": [
+    "babel",
+    "babel-plugin"
+  ],
+  "license": "MIT",
+  "main": "./lib/index.js",
+  "name": "@babel/helper-create-class-features-plugin",
+  "peerDependencies": {
+    "@babel/core": "^7.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/babel/babel.git",
+    "directory": "packages/babel-helper-create-class-features-plugin"
+  },
+  "version": "7.15.4"
+}

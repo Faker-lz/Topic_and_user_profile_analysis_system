@@ -1,0 +1,36 @@
+import SeriesModel from '../../model/Series';
+import { SeriesOption, SeriesOnCartesianOptionMixin, SeriesOnPolarOptionMixin, SeriesOnCalendarOptionMixin, SeriesOnGeoOptionMixin, SeriesOnSingleOptionMixin, OptionDataValue, ItemStyleOption, SeriesLabelOption, SeriesLargeOptionMixin, SeriesStackOptionMixin, SymbolOptionMixin, StatesOptionMixin, OptionDataItemObject, SeriesEncodeOptionMixin, CallbackDataParams, DefaultEmphasisFocus } from '../../util/types';
+import GlobalModel from '../../model/Global';
+import SeriesData from '../../data/SeriesData';
+import { BrushCommonSelectorsForSeries } from '../../component/brush/selector';
+interface ScatterStateOption<TCbParams = never> {
+    itemStyle?: ItemStyleOption<TCbParams>;
+    label?: SeriesLabelOption;
+}
+interface ScatterStatesOptionMixin {
+    emphasis?: {
+        focus?: DefaultEmphasisFocus;
+        scale?: boolean;
+    };
+}
+export interface ScatterDataItemOption extends SymbolOptionMixin, ScatterStateOption, StatesOptionMixin<ScatterStateOption, ScatterStatesOptionMixin>, OptionDataItemObject<OptionDataValue> {
+}
+export interface ScatterSeriesOption extends SeriesOption<ScatterStateOption<CallbackDataParams>, ScatterStatesOptionMixin>, ScatterStateOption<CallbackDataParams>, SeriesOnCartesianOptionMixin, SeriesOnPolarOptionMixin, SeriesOnCalendarOptionMixin, SeriesOnGeoOptionMixin, SeriesOnSingleOptionMixin, SeriesLargeOptionMixin, SeriesStackOptionMixin, SymbolOptionMixin<CallbackDataParams>, SeriesEncodeOptionMixin {
+    type?: 'scatter';
+    coordinateSystem?: string;
+    cursor?: string;
+    clip?: boolean;
+    data?: (ScatterDataItemOption | OptionDataValue | OptionDataValue[])[] | ArrayLike<number>;
+}
+declare class ScatterSeriesModel extends SeriesModel<ScatterSeriesOption> {
+    static readonly type = "series.scatter";
+    type: string;
+    static readonly dependencies: string[];
+    hasSymbolVisual: boolean;
+    getInitialData(option: ScatterSeriesOption, ecModel: GlobalModel): SeriesData;
+    getProgressive(): number | false;
+    getProgressiveThreshold(): number;
+    brushSelector(dataIndex: number, data: SeriesData, selectors: BrushCommonSelectorsForSeries): boolean;
+    static defaultOption: ScatterSeriesOption;
+}
+export default ScatterSeriesModel;

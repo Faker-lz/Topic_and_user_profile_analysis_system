@@ -1,0 +1,53 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="DuplicatedCode" enabled="false" level="WEAK WARNING" enabled_by_default="false">
+      <Languages>
+        <language minSize="49" name="Python" />
+      </Languages>
+    </inspection_tool>
+    <inspection_tool class="Eslint" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <value>
+          <list size="11">
+            <item index="0" class="java.lang.String" itemvalue="fastapi" />
+            <item index="1" class="java.lang.String" itemvalue="psyco" />
+            <item index="2" class="java.lang.String" itemvalue="scikit_learn" />
+            <item index="3" class="java.lang.String" itemvalue="python_json_logger" />
+            <item index="4" class="java.lang.String" itemvalue="Werkzeug" />
+            <item index="5" class="java.lang.String" itemvalue="Click" />
+            <item index="6" class="java.lang.String" itemvalue="MarkupSafe" />
+            <item index="7" class="java.lang.String" itemvalue="PyMySQL" />
+            <item index="8" class="java.lang.String" itemvalue="itsdangerous" />
+            <item index="9" class="java.lang.String" itemvalue="Jinja2" />
+            <item index="10" class="java.lang.String" itemvalue="Flask" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyPep8NamingInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredErrors">
+        <list>
+          <option value="N802" />
+          <option value="N803" />
+          <option value="N801" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyShadowingBuiltinsInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredNames">
+        <list>
+          <option value="BaseException" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="requests.models.Response.__getitem__" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>

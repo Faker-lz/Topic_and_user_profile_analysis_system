@@ -433,3 +433,4 @@ example 与朋友列表接口返回的一样。
 ![](https://picture.cognize.me/cognize/github/weibospider/cookie2.png)
 4.依此点击Chrome开发者工具中的Network->Name中的weibo.cn->Headers->Request Headers，"Cookie:"后的值即为我们要找的cookie值，复制即可，如图所示：
 ![](https://picture.cognize.me/cognize/github/weibospider/cookie3.png)
+5.获得cookie后将其粘贴到account->account.json文件中的cookies对应配置项即可。

@@ -2,6 +2,7 @@ from settings import LOGGING
 from weibo_curl_error import CookieInvalidException, HTMLParseException
 from .base_parser import BaseParser
 import utils
+import re
 
 class IndexParser(BaseParser):
     def __init__(self, user_id, response):
@@ -28,14 +29,15 @@ class IndexParser(BaseParser):
         try:
             user_info = self.selector.xpath("//div[@class='tip2']/*/text()")
             self.user['id'] = self.user_id
-
-            # self.user['weibo_num'] = int(user_info[0][3:-1])
-            # self.user['following'] = int(user_info[1][3:-1])
-            # self.user['followers'] = int(user_info[2][3:-1])
+            row_data = re.findall("\\[(.*?)]", ''.join(user_info), re.I|re.M)
+            self.user['weibo_num'] = utils.str2value(row_data[0])
+            self.user['following'] = utils.str2value(row_data[1])
+            self.user['followers'] = utils.str2value(row_data[2])
             return self.user
         except Exception as e:
             utils.report_log(e)
             raise HTMLParseException
+
 
     def get_page_num(self):
         """获取微博总页数"""

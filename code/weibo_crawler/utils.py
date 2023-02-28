@@ -2,6 +2,7 @@ from datetime import datetime, timedelta
 import sys
 from settings import LOGGING
 import traceback
+import re
 
 
 def report_log(exception: Exception):
@@ -35,10 +36,29 @@ def extract_from_one_table_node(table_node):
         user_id = user_id[user_id.rfind(r'/') + 1:]
     fans_num = table_node.xpath('text()')  # 关注者的粉丝数
     if len(fans_num) != 0:
-        fans_num = str(fans_num[0])
+        row_data = re.findall("粉丝(.+?)人", fans_num[0], re.I|re.M)
+        fans_num = str2value(row_data[0])
     else:
         fans_num = None
     return dict(user_id=user_id, user_name=user_name, fans_num=fans_num)
+
+
+def str2value(valueStr):
+    """
+    微博粉丝、朋友数中万、亿的转换
+    """
+    valueStr = str(valueStr)
+    idxOfYi = valueStr.find('亿')
+    idxOfWan = valueStr.find('万')
+    if idxOfYi != -1 and idxOfWan != -1:
+        return int(float(valueStr[:idxOfYi]) * 1e8 + float(valueStr[idxOfYi + 1:idxOfWan]) * 1e4)
+    elif idxOfYi != -1 and idxOfWan == -1:
+        return int(float(valueStr[:idxOfYi]) * 1e8)
+    elif idxOfYi == -1 and idxOfWan != -1:
+        return int(float(valueStr[idxOfYi + 1:idxOfWan]) * 1e4)
+    elif idxOfYi == -1 and idxOfWan == -1:
+        return int(valueStr)
+
 
 
 def standardize_date(created_at):

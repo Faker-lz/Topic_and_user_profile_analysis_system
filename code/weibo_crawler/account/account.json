@@ -1,7 +1,6 @@
 {
   "cookies": [
-    "请在此处配置cookie"
-
+    "your cookies"
   ],
   "proxies": [
     ["182.34.33.70", 9999]

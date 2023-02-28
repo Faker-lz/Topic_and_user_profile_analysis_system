@@ -28,4 +28,6 @@ class FansParser(BaseParser):
         """
         total_page_num = ''.join(self.selector.xpath(r'//div[@id="pagelist"]/form/div/text()'))
         total_page_num = total_page_num[total_page_num.rfind(r'/') + 1: total_page_num.rfind('页')]
-        return int(total_page_num)
+        if total_page_num:
+            return int(total_page_num)
+        return 1

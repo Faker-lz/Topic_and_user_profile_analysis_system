@@ -35,8 +35,7 @@ def extract_from_one_table_node(table_node):
         user_id = user_id[user_id.rfind(r'/') + 1:]
     fans_num = table_node.xpath('text()')  # 关注者的粉丝数
     if len(fans_num) != 0:
-        # fans_num = str(fans_num[0])
-        fans_num = int(fans_num[0][2: -1])
+        fans_num = str(fans_num[0])
     else:
         fans_num = None
     return dict(user_id=user_id, user_name=user_name, fans_num=fans_num)

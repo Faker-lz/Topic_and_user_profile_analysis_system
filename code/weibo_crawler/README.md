@@ -328,7 +328,7 @@ example:
 ### 7. 用户粉丝列表接口
 
 + 说明：根据用户id搜索用户粉丝
-+ 路由： `/weihbo_curl/api/followers_list`
++ 路由： `/weibo_curl/api/followers_list`
 
 #### 请求参数
 

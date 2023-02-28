@@ -126,7 +126,7 @@ def Match(comment, content):
 def preContent():
     print("停用词读取")
     global stop_words
-    stop_words = [w.strip() for w in open('./dict/哈工大停用词表.txt', 'r', encoding='UTF-8').readlines()]
+    stop_words = [w.strip() for w in open(r'E:\study\俱往矣\lab\last\大二年度项目\github\code\back_end\dict', 'r', encoding='UTF-8').readlines()]
     stop_words.extend(['\n', '\t', ' ', '回复', '转发微博', '转发', '微博', '秒拍', '秒拍视频', '视频', "王者荣耀", "王者", "荣耀"])
     for i in range(128000, 128722 + 1):
         stop_words.extend(chr(i))

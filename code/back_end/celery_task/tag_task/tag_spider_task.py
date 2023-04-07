@@ -44,6 +44,7 @@ def spider(tag: str, tag_task_id: str):
                 weibo['comment_count'] = weibo.pop('comments_count')
                 weibo['tweet_type'] = 'article'
                 weibo['data_source'] = 'weibo'
+                weibo['hot_count'] = int(weibo['retweet_count']) + int(weibo['favorite_count']) + int(weibo['comment_count'])
                 user_set.add(weibo['user_id'])
                 new_weibo_list.append(weibo)
             result_data_list.extend(new_weibo_list)
